@@ -1,14 +1,13 @@
 /*
- * @Author: your name
+ * @Author: 郭依皓
  * @Date: 2020-05-11 13:12:03
- * @LastEditTime: 2020-05-20 16:12:36
+ * @LastEditTime: 2020-05-21 15:50:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \koa\modules\article.js
  */
 const db = require('../config/db');
 const Sequelize = db.sequelize;
-console.log('xxxxx', db.sequelize.query)
 const Article = Sequelize.import('../schema/article');
 Article.sync({
   force: false
