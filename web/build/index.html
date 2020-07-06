@@ -1,114 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="app" content="x5-page-mode">
-    <!-- <meta name="format-detection" content="telephone=yes"/> 调用app打电话接口 -->
-    <style>
-      *{ box-sizing: border-box;}
-      html, body, div, span, applet, object, iframe,
-      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-      a, abbr, acronym, address, big, cite, code,
-      del, dfn, em, img, ins, kbd, q, s, samp,
-      small, strike, strong, sub, sup, tt, var,
-      b, u, i, center,
-      dl, dt, dd, ol, ul, li,
-      fieldset, form, label, legend,
-      table, caption, tbody, tfoot, thead, tr, th, td,
-      article, aside, canvas, details, embed,
-      figure, figcaption, footer, header, hgroup,
-      menu, nav, output, ruby, section, summary,
-      time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-      }
-      /* HTML5 display-role reset for older browsers */
-      article, aside, details, figcaption, figure,
-      footer, header, hgroup, menu, nav, section {
-        display: block;
-      }
-      body {
-        line-height: 1;
-      }
-      ol, ul {
-        list-style: none;
-      }
-      blockquote, q {
-        quotes: none;
-      }
-      blockquote:before, blockquote:after,
-      q:before, q:after {
-        content: '';
-        content: none;
-      }
-      table {
-        border-collapse: collapse;
-        border-spacing: 0;
-      }
-    </style>
-    <style>
-      #app-error{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #f8f8f8;
-        z-index: 9999;
-        display: none;
-      }
-      #app-error .app-error-inner{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 12px;
-      }
-      #error-refresh-button{
-        margin-top: 20px;
-        padding: 5px 10px;
-        border-radius: 3px;
-        border: solid 1px #ccc;
-      }
-    </style>
-</head>
-<body>
-    <div id="app"></div>
 
-    <!-- js资源加载失败时候的处理 -->
-    <div id="app-error">
-      <div class="app-error-inner">
-        <div>资源加载失败，请重试</div>
-        <div id="error-refresh-button">重新加载</div>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="app" content="x5-page-mode">
+  <!-- <meta name="format-detection" content="telephone=yes"/> 调用app打电话接口 -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: '';
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+  </style>
+  <style>
+    #app-error {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #f8f8f8;
+      z-index: 9999;
+      display: none;
+    }
+
+    #app-error .app-error-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    #error-refresh-button {
+      margin-top: 20px;
+      padding: 5px 10px;
+      border-radius: 3px;
+      border: solid 1px #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- js资源加载失败时候的处理 -->
+  <div id="app-error">
+    <div class="app-error-inner">
+      <div>资源加载失败，请重试</div>
+      <div id="error-refresh-button">重新加载</div>
     </div>
-    <script>
-      try {
-        var $appError = document.getElementById('app-error');
-        var $errorButton = document.getElementById('error-refresh-button');
-        $errorButton.onclick = function() {
-          $appError.style.display = 'none';
-          window.location.reload();
-        };
-        window.addEventListener('error', (error) => {
-          var errorTarget = error.target;
-          if (errorTarget && (errorTarget.nodeName === 'SCRIPT')) {
-            console.log('js资源加载异常：', error);
-            $appError.style.display = 'block';
-          }
-        }, true);
-      } catch(e) { console.log(e) }
-    </script>
-    <script src="https://webapi.amap.com/maps?v=1.4.15&key=74369654b0e7e1456af62a800061f0d7"></script>
+  </div>
+  <script>
+    try {
+      var $appError = document.getElementById('app-error');
+      var $errorButton = document.getElementById('error-refresh-button');
+      $errorButton.onclick = function () {
+        $appError.style.display = 'none';
+        window.location.reload();
+      };
+      window.addEventListener('error', (error) => {
+        var errorTarget = error.target;
+        if (errorTarget && (errorTarget.nodeName === 'SCRIPT')) {
+          console.log('js资源加载异常：', error);
+          $appError.style.display = 'block';
+        }
+      }, true);
+    } catch (e) {
+      console.log(e)
+    }
+  </script>
 </body>
+
 </html>
