@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-06 10:58:46
- * @LastEditTime: 2020-07-06 11:19:30
+ * @LastEditTime: 2020-07-08 13:19:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\src\utils\request.js
@@ -12,7 +12,7 @@ import {
 } from 'element-ui'
 import router from '../router'
 const service = axios.create({
-  baseURL: process.env.BASE_API,
+  baseURL: process.env.API_ROOT,
   timeout: 30000
 })
 service.interceptors.request.use(
@@ -23,3 +23,4 @@ service.interceptors.request.use(
     return Promise.reject(error)
   }
 )
+export default service

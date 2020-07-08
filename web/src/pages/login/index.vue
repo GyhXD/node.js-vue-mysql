@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-01 14:54:17
- * @LastEditTime: 2020-07-06 10:51:32
+ * @LastEditTime: 2020-07-08 13:18:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\src\pages\login\index.vue
@@ -19,10 +19,22 @@
   </div>
 </template>
 <script>
+import { getCaptcha } from '@/api/index.js'
 export default {
   data() {
     return {
       radio: '1'
+    }
+  },
+  created() {
+    console.log('getCaptcha', getCaptcha)
+    this.getData()
+  },
+  methods: {
+    getData() {
+      getCaptcha().then(res => {
+        // console.log('res', res)
+      })
     }
   }
 }
