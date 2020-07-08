@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-01 11:20:28
- * @LastEditTime: 2020-07-06 10:39:50
+ * @LastEditTime: 2020-07-08 09:01:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\webpack.dev.js
@@ -22,9 +22,7 @@ module.exports = merge(common, {
   devtool: '#eval-source-map',
   plugins: [htmlPlugin],
   devServer: {
-    noInfo: true,
     open: true,
-    stats: "normal"
   },
 
 })
