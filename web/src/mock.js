@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2020-07-08 09:39:32
- * @LastEditTime: 2020-07-08 14:07:42
+ * @LastEditTime: 2020-07-08 14:37:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\mock\index.js
  */
-const Mock = require('mockjs');
+import Mock from 'mockjs'
 const Random = Mock.Random
 // mock新闻数据，包括新闻标题title、内容content、创建时间createdTime
 const produceNewsData = function () {
@@ -21,6 +21,6 @@ const produceNewsData = function () {
   }
   return newList
 }
-console.log('xxx', produceNewsData)
 // 请求该url，就可以返回newsList
-Mock.mock('uaa/v1/oauth/captchaImage', 'get', produceNewsData)
+const data = Mock.mock('uaa/v1/oauth/captchaImage', 'get', produceNewsData)
+export default data

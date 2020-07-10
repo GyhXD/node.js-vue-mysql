@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-01 14:54:17
- * @LastEditTime: 2020-07-08 13:18:05
+ * @LastEditTime: 2020-07-08 14:08:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\src\pages\login\index.vue
@@ -27,13 +27,12 @@ export default {
     }
   },
   created() {
-    console.log('getCaptcha', getCaptcha)
     this.getData()
   },
   methods: {
     getData() {
       getCaptcha().then(res => {
-        // console.log('res', res)
+        console.log('res', res)
       })
     }
   }
