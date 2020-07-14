@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-13 09:39:37
- * @LastEditTime: 2020-07-13 10:17:19
+ * @LastEditTime: 2020-07-13 14:18:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\mock\mock-server.js
@@ -69,10 +69,8 @@ module.exports = app => {
       try {
         // remove mock routes stack
         app._router.stack.splice(mockStartIndex, mockRoutesLength)
-
         // clear routes cache
         unregisterRoutes()
-
         const mockRoutes = registerRoutes(app)
         mockRoutesLength = mockRoutes.mockRoutesLength
         mockStartIndex = mockRoutes.mockStartIndex

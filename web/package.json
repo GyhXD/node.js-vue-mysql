@@ -4,6 +4,7 @@
   "description": "node项目",
   "main": "index.js",
   "scripts": {
+    "dll": "cross-env webpack -p --progress --config build/webpack.dll.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config build/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
     "lint": "eslint --ext .js,.vue src",
@@ -21,6 +22,7 @@
     "body-parser": "^1.19.0",
     "chokidar": "^3.4.0",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "eslint": "^7.3.1",
