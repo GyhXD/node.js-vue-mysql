@@ -1,4 +1,4 @@
-## 航天新商务OSS
+## web项目
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
@@ -58,6 +58,13 @@
   - SplitPane
   - Dropzone
   - Sticky
+
+- webpack 
+  - dllplugin
+    - 在package.json上配置dll指令，当依赖发生更新的时候，需要重新run dll用来更新抽离的资源。
+    - 使用dllplugin只是把公共的资源抽离出一个manifest.json对照表和vendor的一个压缩的js。
+    - 在dev环境上秩序在index.html上加个<script>的资源就可挂载上。
+    - 在build环境则需要在build/webpack.prod.js配置copy-webpack-plugin来吧run dll的文件公共资源放在dist里面
 ```
 
 ## 开发
@@ -79,18 +86,22 @@ npm install
 # 建议不要直接使用 cnpm 安装依赖，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
 npm install --registry=https://registry.npm.taobao.org
 
+# 因为该项目是使用dllplugin,所以第一次打包需要走一遍抽离
+npm run dll
+
 # 启动服务
 npm run dev
+```
+## 抽离公共资源
+```bash
+npm run dll
 ```
 
 ## 发布
 
 ```bash
-# 构建测试环境
-npm run build:stage
-
 # 构建生产环境
-npm run build:prod
+npm run build
 ```
 
 ## 其它
