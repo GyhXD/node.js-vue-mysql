@@ -187,7 +187,14 @@
       <div id="error-refresh-button">重新加载</div>
     </div>
   </div>
-  <script src="./static/dll_vendor.js"></script>
+  <!-- <script src="./static/dll_vendor.js"></script> -->
+  <script>
+    document.write('<script type="text/javascript" src="../bundle-config.js?v=' + Math.random() + '"><\/script>');
+  </script>
+  <script>
+    document.write('<script type="text/javascript" src="../static/' + window.WEBPACK_ASSETS['vendor'].js +
+      '"><\/script>');
+  </script>
   <script>
     try {
       var $appError = document.getElementById('app-error');

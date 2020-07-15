@@ -65,6 +65,7 @@
     - 使用dllplugin只是把公共的资源抽离出一个manifest.json对照表和vendor的一个压缩的js。
     - 在dev环境上秩序在index.html上加个<script>的资源就可挂载上。
     - 在build环境则需要在build/webpack.prod.js配置copy-webpack-plugin来吧run dll的文件公共资源放在dist里面
+    - assets-webpack-plugin ，它可以自动添加版本号
 ```
 
 ## 开发
