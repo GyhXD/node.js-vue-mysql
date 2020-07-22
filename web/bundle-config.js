@@ -1,1 +1,1 @@
-window.WEBPACK_ASSETS = {"vendor":{"js":"dll_vendor_b1a5bb.js"}}
+window.WEBPACK_ASSETS = {"vendor":{"js":"dll_vendor.js"}}

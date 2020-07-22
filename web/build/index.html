@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title></title>
   <meta name="viewport"
-    content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
+    content="width=device-width,height=device-height,initial-scale=1,user-scalable=0,viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="app" content="x5-page-mode">
-  <!-- <meta name="format-detection" content="telephone=yes"/> 调用app打电话接口 -->
   <style>
     * {
       box-sizing: border-box;
@@ -175,24 +174,23 @@
       border: solid 1px #ccc;
     }
   </style>
+  <!-- <link href="./static/css/style.24032c73106759f6ab71.css" rel="stylesheet"> -->
 </head>
 
 <body>
   <div id="app"></div>
-
-  <!-- js资源加载失败时候的处理 -->
   <div id="app-error">
     <div class="app-error-inner">
       <div>资源加载失败，请重试</div>
       <div id="error-refresh-button">重新加载</div>
     </div>
   </div>
-  <!-- <script src="./static/dll_vendor.js"></script> -->
   <script>
-    document.write('<script type="text/javascript" src="../bundle-config.js?v=' + Math.random() + '"><\/script>');
+    document.write('<script type="text/javascript" src="./bundle-config.js?v=' + Math.random() + '"><\/script>');
   </script>
   <script>
-    document.write('<script type="text/javascript" src="../static/' + window.WEBPACK_ASSETS['vendor'].js +
+    console.log(window.WEBPACK_ASSETS['vendor'])
+    document.write('<script type="text/javascript" src="./static/' + window.WEBPACK_ASSETS['vendor'].js +
       '"><\/script>');
   </script>
   <script>

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-01 11:20:28
- * @LastEditTime: 2020-07-14 16:55:14
+ * @LastEditTime: 2020-07-20 14:56:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \web\webpack.dev.js
@@ -24,6 +24,12 @@ module.exports = merge(common, {
   devtool: '#eval-source-map',
   devServer: {
     open: config.dev.autoOpenBrowser
+  },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }, ]
   },
   plugins: [
     new webpack.DefinePlugin({
