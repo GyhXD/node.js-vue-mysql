@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-14 10:22:38
- * @LastEditTime: 2020-07-20 10:55:28
+ * @LastEditTime: 2020-07-22 15:33:15
  * @LastEditors: Please set LastEditors
  * @Description: 文档https://segmentfault.com/a/1190000011795931?utm_source=tag-newest
  * @FilePath: \web\build\webpack.dll.config.js
@@ -35,7 +35,7 @@ module.exports = {
       path: './',
       processOutput: (assets) => {
         console.log('====assets', assets)
-        return 'window.WEBPACK_ASSETS = ' + JSON.stringify(assets);
+        return 'window.WEBPACK_ASSETS = ' + JSON.stringify(assets)
       }
     })
   ]
