@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-21 15:35:58
- * @LastEditTime: 2020-05-21 15:40:25
+ * @LastEditTime: 2020-10-12 15:31:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \koa\README.md
@@ -9,7 +9,7 @@
 <p align="center"> node + koa2 + mysql 简单后台管理</p>
 
 ## 一、这是个什么的项目？
-此为一个node + koa2 + mysql搭建的一个简单的后台管理系统，此为刚开始开发项目
+此为一个node + koa2 + mysql搭建的一个简单的项目
 
 ## 二、项目包含什么功能？
 
